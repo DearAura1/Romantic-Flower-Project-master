@@ -77,7 +77,7 @@ openLetter.addEventListener("click",()=>{
 });
 
 const letterText =
-  "يمكن الكلام ده بسيط... بس الحقيقة إن وجودك في حياتي خلّى تفاصيل كتير تاخد معنى تاني. أتمنى كل مرة تشوفي فيها الورد تفتكري إن في حد بيتمنى لكِ دايمًا أيام حلوة، وضحكة من قلبك، وحاجات أجمل من اللي تتمنيها.";
+  "يمكن الكلام ده بسيط... بس الحقيقة إن كان ليكي الفضل في تغيير حاجات كتير فيا وخلّيتي تفاصيل كتير تاخد معنى تاني. أتمنى كل مرة تشوفي فيها الورد تفتكري إن في حد بيتمنى لكِ دايمًا أيام حلوة، وضحكة من قلبك، وحاجات أجمل من اللي بتتمنيها.";
 
 function typeLetter(){
   if(typed) return;
@@ -211,7 +211,7 @@ setInterval(()=>{
 
 
 // Timer: change this date to your real special date.
-const startDate = new Date("2024-02-01T00:00:00");
+const startDate = new Date("2025-03-31T00:00:00");
 
 function updateTimer(){
   let diff=Math.max(
