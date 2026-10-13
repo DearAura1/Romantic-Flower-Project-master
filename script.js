@@ -210,37 +210,39 @@ setInterval(()=>{
 },850);
 
 
-// Timer: change this date to your real special date.
+// Timer
 const startDate = new Date("2024-02-01T00:00:00");
 
-function updateTimer(){
-  let diff=Math.max(
-    0,
-    Date.now()-startDate.getTime()
-  );
+function updateTimer() {
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
 
-  const sec=Math.floor(diff/1000);
+    if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
+        console.error("عناصر العداد غير موجودة");
+        return;
+    }
 
-  const days=Math.floor(sec/86400);
-  const hours=Math.floor((sec%86400)/3600);
-  const mins=Math.floor((sec%3600)/60);
-  const seconds=sec%60;
+    const diff = Math.max(0, Date.now() - startDate.getTime());
+    const totalSeconds = Math.floor(diff / 1000);
 
-  $("#days").textContent=
-    String(days).padStart(3,"0");
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
-  $("#hours").textContent=
-    String(hours).padStart(2,"0");
-
-  $("#minutes").textContent=
-    String(mins).padStart(2,"0");
-
-  $("#seconds").textContent=
-    String(seconds).padStart(2,"0");
+    daysElement.textContent = String(days).padStart(3, "0");
+    hoursElement.textContent = String(hours).padStart(2, "0");
+    minutesElement.textContent = String(minutes).padStart(2, "0");
+    secondsElement.textContent = String(seconds).padStart(2, "0");
 }
 
 updateTimer();
-setInterval(updateTimer,1000);
+setInterval(updateTimer, 1000);
+
+
+
 
 
 // Music Player
