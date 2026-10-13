@@ -211,7 +211,7 @@ setInterval(()=>{
 
 
 // Timer: change this date to your real special date.
-const startDate = new Date("2024-02-1T00:00:00");
+const startDate = new Date("2024-02-01T00:00:00");
 
 function updateTimer(){
   let diff=Math.max(
